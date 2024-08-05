@@ -31,7 +31,7 @@ export const constantRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "dashboard",
-        component: () => import("@/views/dashboard/index.vue"),
+        component: () => import("@/views/dashboard/home.vue"),
         name: "Dashboard", // 用于 keep-alive, 必须与SFC自动推导或者显示声明的组件name一致
         // https://cn.vuejs.org/guide/built-ins/keep-alive.html#include-exclude
         meta: {

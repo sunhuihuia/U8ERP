@@ -18,6 +18,7 @@ export const constantRoutes = [
     component: () => import("@/views/login/index.vue"),
     meta: { hidden: true },
   },
+
   {
     path: "/",
     name: "/",
@@ -40,6 +41,11 @@ export const constantRoutes = [
       {
         path: "401",
         component: () => import("@/views/error-page/401.vue"),
+        meta: { hidden: true },
+      },
+      {
+        path: "home",
+        component: () => import("@/views/dashboard/home.vue"),
         meta: { hidden: true },
       },
       {

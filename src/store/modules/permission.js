@@ -1,6 +1,7 @@
 import { constantRoutes } from "@/router";
 import { store } from "@/store";
 import { listRoutes } from "@/api/menu";
+import { Competence } from "@/router/Competence.js";
 const modules = import.meta.glob("../../views/**/**.vue");
 const Layout = () => import("@/layout/index.vue");
 /**
@@ -82,7 +83,8 @@ export const usePermissionStore = defineStore("permission", () => {
         .then(({ data: asyncRoutes }) => {
           // 根据角色获取有访问权限的路由
           const accessedRoutes = filterAsyncRoutes(asyncRoutes, roles);
-          console.log("accessedRoutes", accessedRoutes);
+          accessedRoutes.push(Competence);
+          console.log("accessedRoutes", Competence, accessedRoutes);
           setRoutes(accessedRoutes);
           resolve(accessedRoutes);
         })

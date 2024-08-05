@@ -1,6 +1,5 @@
 <template>
   <div class="login-container">
-    
     <h1>ddddd</h1>
     <el-button @click="fetchUserData">按钮</el-button>
   </div>
@@ -15,7 +14,7 @@ import { LocationQuery, LocationQueryValue, useRoute } from "vue-router";
 import router from "@/router";
 import defaultSettings from "@/settings";
 import { ThemeEnum } from "@/enums/ThemeEnum";
-import axios from "axios"
+import axios from "axios";
 
 // Stores
 const userStore = useUserStore();
@@ -114,18 +113,17 @@ function handleLogin() {
   });
 }
 
-
-
 function gotest() {
-  console.log("go")
+  console.log("go");
   router.push({ path: "/login", query: {} });
 }
 async function fetchUserData() {
   try {
-    const res = await axios.post("http://tzdzzy666.ufyct.com:7578/api/Values/Work1",{"CommandType":"select","database":"oa",
-                    "SqlsStr":"select 1 a,2 b" });
-    console.log(res)
-    
+    const res = await axios.post(
+      "http://tzdzzy666.ufyct.com:7578/api/Values/Work1",
+      { CommandType: "select", database: "oa", SqlsStr: "select 1 a,2 b" }
+    );
+    console.log(res);
   } catch (error) {
     console.error(error);
   }

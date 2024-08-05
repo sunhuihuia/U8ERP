@@ -7,21 +7,14 @@
       </template>
     </el-input>
 
-    <el-tree
-      ref="deptTreeRef"
-      class="mt-2"
-      :data="deptList"
-      :props="{ children: 'children', label: 'label', disabled: '' }"
-      :expand-on-click-node="false"
-      :filter-node-method="handleFilter"
-      default-expand-all
-      @node-click="handleNodeClick"
-    />
+    <el-tree ref="deptTreeRef" class="mt-2" :data="deptList"
+      :props="{ children: 'children', label: 'label', disabled: '' }" :expand-on-click-node="false"
+      :filter-node-method="handleFilter" default-expand-all @node-click="handleNodeClick" />
   </el-card>
 </template>
 
 <script setup lang="ts">
-import { getDeptOptions } from "@/api/dept";
+// import { getDeptOptions } from "@/api/dept";
 
 const props = defineProps({
   modelValue: {
@@ -62,8 +55,8 @@ function handleNodeClick(data: { [key: string]: any }) {
 }
 
 onBeforeMount(() => {
-  getDeptOptions().then((response) => {
-    deptList.value = response.data;
-  });
+  // getDeptOptions().then((response) => {
+  //   deptList.value = response.data;
+  // });
 });
 </script>
